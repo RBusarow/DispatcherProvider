@@ -9,6 +9,17 @@ module.exports = {
   organizationName: "rbusarow", // Usually your GitHub org/user name.
   projectName: "Dispatch", // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    announcementBar: {
+      id: "supportus",
+      content:
+        '⭐️ If you like Dispatch, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/rbusarow/Dispatch/">GitHub</a>! ⭐️',
+    },
     navbar: {
       title: "Dispatch",
       //      logo: {
@@ -17,15 +28,26 @@ module.exports = {
       //      },
       items: [
         {
-          to: "docs/",
-          activeBasePath: "docs",
+          type: "doc",
+          docId: "changelog",
           label: "Docs",
           position: "left",
         },
         {
-          to: "blog",
-          label: "Blog",
-          position: "left",
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {
+              // to: "/versions",
+              // label: "All versions",
+            },
+          ],
+        },
+        {
+          label: "Twitter",
+          href: "https://twitter.com/rbusarow",
+          position: "right",
         },
         {
           href: "https://github.com/rbusarow/Dispatch",
@@ -35,52 +57,11 @@ module.exports = {
       ],
     },
     footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Change Log",
-              to: "docs/",
-            },
-            {
-              label: "Second Doc",
-              to: "docs/doc2/",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/dispatch",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/rbusarow",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/rbusarow/Dispatch/",
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Rick Busarow, Built with Docusaurus.`,
     },
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
       additionalLanguages: ["kotlin", "groovy"],
     },
   },

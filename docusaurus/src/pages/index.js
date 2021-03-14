@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const features = [
   {
     title: "CoroutineDispatcher Injection",
-    imageUrl: "img/syringe-solid.svg",
+//    imageUrl: "img/syringe-solid.svg",
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -19,17 +19,18 @@ const features = [
   },
   {
     title: "Better Android Lifecycle Awareness",
-    imageUrl: "img/power-off-solid.svg",
+//    imageUrl: "img/power-off-solid.svg",
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
         ahead and move your docs into the <code>docs</code> directory.
+
       </>
     ),
   },
   {
     title: "Android Espresso",
-    imageUrl: "img/coffee-solid.svg",
+//    imageUrl: "img/coffee-solid.svg",
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -53,13 +54,14 @@ function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx("col col--3", styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
+
       <h3>{title}</h3>
       <p>{description}</p>
+      {imgUrl && (
+          <div className="text--center">
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          </div>
+      )}
     </div>
   );
 }
@@ -69,7 +71,8 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      //      noFooter={true}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
