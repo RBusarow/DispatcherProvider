@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ package samples
 import dispatch.android.lifecycle.*
 import dispatch.android.lifecycle.DispatchLifecycleScope.MinimumStatePolicy.*
 import dispatch.core.*
+import dispatch.internal.test.android.*
 import dispatch.test.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
@@ -26,7 +27,7 @@ import kotlinx.coroutines.flow.*
 
 @CoroutineTest
 @ExperimentalCoroutinesApi
-class DispatchLifecycleScopeSample {
+class DispatchLifecycleScopeSample : LiveDataTest {
 
   @Sample
   fun lifecycleCoroutineScopeFromScopeSample() = runBlocking {

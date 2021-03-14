@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ package dispatch.android.lifecycle
 import androidx.lifecycle.*
 import dispatch.core.*
 import dispatch.internal.test.*
+import dispatch.internal.test.android.*
 import dispatch.test.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
@@ -29,7 +30,9 @@ import kotlin.coroutines.*
 
 @FlowPreview
 @ExperimentalCoroutinesApi
-class OnNextCreateTest : BaseTest() {
+class OnNextCreateTest :
+  BaseTest(),
+  LiveDataTest {
 
   lateinit var lifecycleOwner: LifecycleOwner
   lateinit var lifecycle: LifecycleRegistry

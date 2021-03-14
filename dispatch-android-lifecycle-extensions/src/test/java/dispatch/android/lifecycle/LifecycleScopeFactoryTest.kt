@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,9 @@ import kotlin.coroutines.*
 
 @ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
-internal class LifecycleScopeFactoryTest : HermitJUnit5() {
+internal class LifecycleScopeFactoryTest :
+  HermitJUnit5(),
+  LiveDataTest {
 
   val job = Job()
   val dispatcher = newSingleThreadContext("single thread dispatcher")

@@ -43,7 +43,7 @@ object Plugins {
 object Versions {
   const val ktlint = "0.35.0"
   const val dokka = "1.4.20"
-  const val dependencyAnalysis = "0.70.0"
+  const val dependencyAnalysis = "0.71.0"
   const val knit = "0.2.3"
   const val gradleDoctor = "0.7.0"
 
@@ -52,15 +52,15 @@ object Versions {
   const val targetSdk = 29
 
   const val binaryCompatibility = "0.4.0"
-  const val benManes = "0.36.0"
+  const val benManes = "0.38.0"
   const val gradleWrapper = "4.1.2"
   const val dagger = "2.25.2"
-  const val kotlin = "1.4.30"
+  const val kotlin = "1.4.31"
   const val mavenPublish = "0.13.0"
 
-  const val spotless = "5.9.0"
+  const val spotless = "5.11.0"
   const val taskTree = "1.5"
-  const val versionName = "1.0.0-beta08"
+  const val versionName = "1.0.0-beta09"
 }
 
 object BuildPlugins {
@@ -86,14 +86,14 @@ object BuildPlugins {
 object Libs {
 
   object AndroidX {
-    const val activity = "androidx.activity:activity-ktx:1.1.0"
+    const val activity = "androidx.activity:activity-ktx:1.2.0"
     const val appcompat = "androidx.appcompat:appcompat:1.2.0"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
     const val coreKtx = "androidx.core:core-ktx:1.3.2"
 
     object Fragment {
 
-      private const val version = "1.2.5"
+      private const val version = "1.3.0"
 
       const val core = "androidx.fragment:fragment:$version"
       const val ktx = "androidx.fragment:fragment-ktx:$version"
@@ -102,7 +102,7 @@ object Libs {
 
     object Lifecycle {
 
-      private const val version = "2.2.0"
+      private const val version = "2.3.0"
 
       const val common = "androidx.lifecycle:lifecycle-common:$version"
       const val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
@@ -163,7 +163,7 @@ object Libs {
   }
 
   object JUnit {
-    const val jUnit4 = "junit:junit:4.13.1"
+    const val jUnit4 = "junit:junit:4.13.2"
 
     private const val version = "5.7.1"
 
@@ -175,7 +175,7 @@ object Libs {
   }
 
   object Kotest {
-    private const val version = "4.4.0"
+    private const val version = "4.4.2"
     const val assertions = "io.kotest:kotest-assertions-core-jvm:$version"
     const val assertionsShared = "io.kotest:kotest-assertions-shared-jvm:$version"
     const val commonJvm = "io.kotest:kotest-common-jvm:$version"
@@ -196,7 +196,7 @@ object Libs {
   object Kotlinx {
 
     object Coroutines {
-      private const val version = "1.4.2"
+      private const val version = "1.4.3"
       const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
       const val coreJvm = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$version"
       const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
@@ -209,7 +209,7 @@ object Libs {
   }
 
   object MockK {
-    const val core = "io.mockk:mockk:1.10.5"
+    const val core = "io.mockk:mockk:1.10.6"
   }
 
   object RickBusarow {

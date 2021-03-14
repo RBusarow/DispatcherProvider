@@ -57,10 +57,10 @@ repositories {
 
 dependencies {
 
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-android-lifecycle:1.0.0-beta08")
-  implementation("androidx.lifecycle:lifecycle-common:2.2.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-android-lifecycle:1.0.0-beta09")
+  implementation("androidx.lifecycle:lifecycle-common:2.3.0")
 }
 ```
 

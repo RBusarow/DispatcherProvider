@@ -137,6 +137,16 @@ subprojects {
   }
 }
 
+val updateDocsVersions by tasks.registering {
+
+  description = "updates all artifact versions used in documentation"
+  group = "documentation"
+
+  doLast {
+    allprojects { updateReadMeArtifactVersions() }
+  }
+}
+
 val cleanDocs by tasks.registering {
 
   description = "cleans /docs"

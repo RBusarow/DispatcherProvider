@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,20 +37,9 @@ fun Project.common() {
     resolutionStrategy {
       force(
         Libs.Kotlin.reflect,
-        // androidx is currently leaking coroutines 1.1.1 everywhere
         Libs.Kotlinx.Coroutines.core,
         Libs.Kotlinx.Coroutines.test,
-        Libs.Kotlinx.Coroutines.android,
-        // prevent dependency libraries from leaking their own old version of this library
-        Libs.RickBusarow.Dispatch.core,
-        Libs.RickBusarow.Dispatch.detekt,
-        Libs.RickBusarow.Dispatch.espresso,
-        Libs.RickBusarow.Dispatch.lifecycle,
-        Libs.RickBusarow.Dispatch.lifecycleExtensions,
-        Libs.RickBusarow.Dispatch.viewModel,
-        Libs.RickBusarow.Dispatch.Test.core,
-        Libs.RickBusarow.Dispatch.Test.jUnit4,
-        Libs.RickBusarow.Dispatch.Test.jUnit5
+        Libs.Kotlinx.Coroutines.android
       )
     }
   }

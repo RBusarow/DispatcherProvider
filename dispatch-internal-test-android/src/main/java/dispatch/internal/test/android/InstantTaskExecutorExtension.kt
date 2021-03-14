@@ -13,24 +13,29 @@
  * limitations under the License.
  */
 
-@file:Suppress("EXPERIMENTAL_API_USAGE", "EXPERIMENTAL_OVERRIDE")
+package dispatch.internal.test.android
 
-package samples
-
-import dispatch.test.*
-import io.kotest.matchers.*
-import org.junit.jupiter.api.*
+import androidx.arch.core.executor.*
 import org.junit.jupiter.api.extension.*
 
-@ExtendWith(CoroutineTestExtension::class)
-class CoroutineTestExtensionExtendWithSample(
-  val testScope: TestProvidedCoroutineScope
-) {
+@ExtendWith(InstantTaskExecutorExtension::class)
+interface LiveDataTest
 
-  @Test
-  fun `injected scope should be injected`() {
+@Suppress("RestrictedApi")
+class InstantTaskExecutorExtension : BeforeAllCallback {
 
-    testScope shouldNotBe null
+  override fun beforeAll(context: ExtensionContext?) {
+    ArchTaskExecutor.getInstance()
+      .setDelegate(object : TaskExecutor() {
+        override fun executeOnDiskIO(runnable: Runnable) {
+          runnable.run()
+        }
+
+        override fun postToMainThread(runnable: Runnable) {
+          runnable.run()
+        }
+
+        override fun isMainThread(): Boolean = true
+      })
   }
-
 }

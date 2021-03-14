@@ -32,9 +32,9 @@ In root project-level `build.gradle` or `build.gradle.kts`:
 ``` kotlin
 allprojects {
   dependencies {
-    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.14.2")
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.15.0")
     
-    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta08")
+    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta09")
   }
 }
 ```

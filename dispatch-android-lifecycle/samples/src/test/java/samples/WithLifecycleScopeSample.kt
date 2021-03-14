@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import dispatch.android.lifecycle.*
 import dispatch.core.*
+import dispatch.internal.test.android.*
 import kotlinx.coroutines.flow.*
 import org.junit.*
 import org.junit.runner.*
@@ -30,7 +31,7 @@ import org.robolectric.annotation.*
 
 @RunWith(RobolectricTestRunner::class)
 @Config(manifest = Config.NONE)
-class WithViewLifecycleScopeSample {
+class WithViewLifecycleScopeSample : LiveDataTest {
 
   @Test
   fun withViewLifecycleScopeSample() {

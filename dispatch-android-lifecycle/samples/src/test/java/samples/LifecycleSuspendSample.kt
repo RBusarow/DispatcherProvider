@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Rick Busarow
+ * Copyright (C) 2021 Rick Busarow
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ package samples
 
 import dispatch.android.lifecycle.*
 import dispatch.core.*
+import dispatch.internal.test.android.*
 import dispatch.test.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
@@ -26,7 +27,7 @@ import org.junit.jupiter.api.*
 @ExperimentalCoroutinesApi
 class LifecycleSuspendSample(
   val testScope: TestProvidedCoroutineScope
-) {
+) : LiveDataTest {
 
   @BeforeEach
   fun beforeEach() {
