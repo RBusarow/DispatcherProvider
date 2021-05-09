@@ -337,15 +337,15 @@ fun `sayHello should say hello`() = runBlockingProvided {
 
 | **artifact**                            | **features**                                   |
 | --------------------------------------  | ---------------------------------------------- |
-| [dispatch-android-espresso]             | [IdlingDispatcher] <p> [IdlingDispatcherProvider]
+| [dispatch-android-espresso]             | [IdlingDispatcher] <p/> [IdlingDispatcherProvider]
 | [dispatch-android-lifecycle-extensions] | [dispatchLifecycleScope][dispatchLifecycleScope-extension]
-| [dispatch-android-lifecycle]            | [DispatchLifecycleScope][DispatchLifecycleScope-class] <p> [launchOnCreate] <p> [launchOnStart] <p> [launchOnResume] <p> [onNextCreate] <p> [onNextStart] <p> [onNextResume]
-| [dispatch-android-viewmodel]            | [CoroutineViewModel] <p> [viewModelScope]
-| [dispatch-core]                         | Dispatcher-specific types and factories <p> Dispatcher-specific coroutine builders
+| [dispatch-android-lifecycle]            | [DispatchLifecycleScope][DispatchLifecycleScope-class] <p/> [launchOnCreate] <p/> [launchOnStart] <p/> [launchOnResume] <p/> [onNextCreate] <p/> [onNextStart] <p/> [onNextResume]
+| [dispatch-android-viewmodel]            | [CoroutineViewModel] <p/> [viewModelScope]
+| [dispatch-core]                         | Dispatcher-specific types and factories <p/> Dispatcher-specific coroutine builders
 | [dispatch-detekt]                       | [Detekt] rules for common auto-imported-the-wrong-thing problems
 | [dispatch-test-junit4]                  | [TestCoroutineRule]
-| [dispatch-test-junit5]                  | [CoroutineTest] <p> [CoroutineTestExtension]
-| [dispatch-test]                         | [TestProvidedCoroutineScope] <p> [TestDispatcherProvider] <p> [runBlockingProvided] and [testProvided]
+| [dispatch-test-junit5]                  | [CoroutineTest] <p/> [CoroutineTestExtension]
+| [dispatch-test]                         | [TestProvidedCoroutineScope] <p/> [TestDispatcherProvider] <p/> [runBlockingProvided] and [testProvided]
 
 ## Full Gradle Config
 

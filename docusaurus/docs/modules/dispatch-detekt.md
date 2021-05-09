@@ -1,6 +1,7 @@
 ---
 id: dispatch-detekt
 title: Detekt
+sidebar_label: Detekt
 ---
 
 # Module Dispatch-Detekt
@@ -39,7 +40,7 @@ allprojects {
   dependencies {
     detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.14.2")
     
-    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta07")
+    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta09")
   }
 }
 ```

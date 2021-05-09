@@ -1,6 +1,7 @@
 ---
 id: dispatch-android-viewmodel
 title: ViewModel
+sidebar_label: ViewModel
 ---
 
 # Module dispatch-android-viewmodel
@@ -181,9 +182,9 @@ repositories {
 
 dependencies {
 
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-android-viewmodel:1.0.0-beta07")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-android-viewmodel:1.0.0-beta09")
 }
 ```
 

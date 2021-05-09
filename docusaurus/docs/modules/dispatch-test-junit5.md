@@ -1,6 +1,7 @@
 ---
 id: dispatch-test-junit5
 title: Test JUnit5
+sidebar_label: Test JUnit5
 ---
 
 # Module dispatch-test-junit5
@@ -106,13 +107,13 @@ repositories {
 dependencies {
 
   // core
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta07")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta09")
 
   // the junit5 artifact also provides the dispatch-test artifact
-  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit5:1.0.0-beta07")
-  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit5:1.0.0-beta09")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
   testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
 }
 ```
@@ -131,16 +132,16 @@ repositories {
 dependencies {
 
   // core
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta07")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta09")
 
   // the junit4 and junit5 artifacts also provides the dispatch-test artifact
-  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit4:1.0.0-beta07")
-  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit5:1.0.0-beta07")
+  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit4:1.0.0-beta09")
+  testImplementation("com.rickbusarow.dispatch:dispatch-test-junit5:1.0.0-beta09")
   testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
   testImplementation("org.junit.vintage:junit-vintage-engine:5.7.0")
-  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
 }
 ```
 

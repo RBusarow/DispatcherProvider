@@ -1,6 +1,7 @@
 ---
 id: dispatch-test
-title: Test
+title: Test Core
+sidebar_label: Test Core
 ---
 
 # Module dispatch-test
@@ -125,12 +126,12 @@ repositories {
 dependencies {
 
   // core
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta07")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta09")
 
-  testImplementation("com.rickbusarow.dispatch:dispatch-test:1.0.0-beta07")
-  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+  testImplementation("com.rickbusarow.dispatch:dispatch-test:1.0.0-beta09")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
 }
 ```
 
