@@ -1,8 +1,8 @@
 module.exports = {
   title: "Dispatch",
   tagline: "Quality of life coroutine utilities",
-  url: "https://rbusarow.github.io/Dispatch/",
-  baseUrl: "/",
+  url: "https://rbusarow.github.io/",
+  baseUrl: "/Dispatch/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
