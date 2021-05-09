@@ -47,40 +47,14 @@ dependencyResolutionManagement {
   }
 }
 
-plugins {
-  id("com.gradle.enterprise").version("3.5.2")
-}
-
-gradleEnterprise {
-  buildScan {
-    termsOfServiceUrl = "https://gradle.com/terms-of-service"
-    termsOfServiceAgree = "yes"
-    publishAlwaysIf(System.getenv("GITHUB_ACTIONS")?.toBoolean() == true)
-  }
-}
-
-rootProject.name = "Dispatch"
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-include(":dispatch-android-espresso")
-include(":dispatch-android-espresso:samples")
-include(":dispatch-android-lifecycle")
-include(":dispatch-android-lifecycle-extensions")
-include(":dispatch-android-lifecycle-extensions:samples")
-include(":dispatch-android-lifecycle:samples")
-include(":dispatch-android-viewmodel")
-include(":dispatch-android-viewmodel:samples")
-include(":dispatch-core")
-include(":dispatch-test")
-include(":dispatch-test-junit4")
-include(":dispatch-test-junit4:samples")
-include(":dispatch-test-junit5")
-include(":dispatch-test-junit5:samples")
-include(":dispatch-test:samples")
-include(":dispatch-core:samples")
-include(":dispatch-detekt")
-include(":dispatch-detekt:samples")
-include(":dispatch-internal-test")
-include(":dispatch-internal-test-android")
-include(":dispatch-sample")
+@Suppress("UnstableApiUsage")
+dependencyResolutionManagement {
+  versionCatalogs {
+    create("libs") {
+      from(files("../gradle/libs.versions.toml"))
+    }
+  }
+}

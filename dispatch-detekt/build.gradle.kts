@@ -15,22 +15,22 @@
 
 plugins {
   javaLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
 
-  api(Libs.Detekt.api)
-  api(Libs.Kotlin.compiler)
+  api(libs.detekt.api)
+  api(libs.kotlin.compiler)
 
-  testImplementation(Libs.Detekt.api)
-  testImplementation(Libs.Detekt.test)
-  testImplementation(Libs.JUnit.jUnit5Api)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
+  testImplementation(libs.detekt.api)
+  testImplementation(libs.detekt.test)
+  testImplementation(libs.junit.api)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
 
-  testRuntimeOnly(Libs.JUnit.jUnit5Runtime)
-  testRuntimeOnly(Libs.JUnit.jUnit5Vintage)
+  testRuntimeOnly(libs.junit.engine)
+  testRuntimeOnly(libs.junit.vintage)
 }

@@ -15,36 +15,37 @@
 
 plugins {
   androidLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
 
-  api(Libs.AndroidX.Fragment.core)
-  api(Libs.AndroidX.Lifecycle.common)
-  api(Libs.Kotlinx.Coroutines.core)
-  api(Libs.Kotlinx.Coroutines.coreJvm)
+  api(libs.androidx.fragment.core)
+  api(libs.androidx.lifecycle.common)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.coroutines.jvm)
 
-  api(project(":dispatch-android-lifecycle"))
-  implementation(Libs.Kotlinx.Coroutines.android)
+  api(projects.dispatchAndroidLifecycle)
 
-  implementation(project(":dispatch-core"))
+  implementation(libs.kotlinx.coroutines.android)
 
-  testImplementation(Libs.AndroidX.Lifecycle.runtime)
-  testImplementation(Libs.AndroidX.Test.Arch.core)
-  testImplementation(Libs.AndroidX.Test.Espresso.core)
-  testImplementation(Libs.AndroidX.Test.runner)
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlinx.Coroutines.test)
-  testImplementation(Libs.RickBusarow.Hermit.junit5)
-  testImplementation(Libs.Robolectric.core)
+  implementation(projects.dispatchCore)
 
-  testImplementation(project(":dispatch-internal-test"))
-  testImplementation(project(":dispatch-internal-test-android"))
-  testImplementation(project(":dispatch-test-junit4"))
-  testImplementation(project(":dispatch-test-junit5"))
+  testImplementation(libs.androidx.lifecycle.runtime)
+  testImplementation(libs.androidx.arch.test.core)
+  testImplementation(libs.androidx.test.espresso.core)
+  testImplementation(libs.androidx.test.runner)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlinx.coroutines.test)
+  testImplementation(libs.hermit.jUnit5)
+  testImplementation(libs.robolectric)
+
+  testImplementation(projects.dispatchInternalTest)
+  testImplementation(projects.dispatchInternalTestAndroid)
+  testImplementation(projects.dispatchTestJunit4)
+  testImplementation(projects.dispatchTestJunit5)
 }

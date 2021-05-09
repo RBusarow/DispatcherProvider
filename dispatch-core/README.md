@@ -209,6 +209,7 @@ dependencies {
 
 <!--- MODULE dispatch-core-->
 <!--- INDEX  -->
+
 [DispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-dispatcher-provider/index.html
 [DefaultDispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-default-dispatcher-provider/index.html
 [DefaultCoroutineScope]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-default-coroutine-scope/index.html
@@ -242,9 +243,12 @@ dependencies {
 [flowOnMainImmediate]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/flow-on-main-immediate.html
 [flowOnUnconfined]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/flow-on-unconfined.html
 [DefaultDispatcherProvider.set]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-default-dispatcher-provider/set.html
+
 <!--- MODULE dispatch-test-->
 <!--- INDEX  -->
+
 [TestDispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/-test-dispatcher-provider/index.html
+
 <!--- END -->
 
 [context_preservation]: https://medium.com/@elizarov/execution-context-of-kotlin-flows-b8c151c9309b

@@ -143,7 +143,7 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
   implementation("com.rickbusarow.dispatch:dispatch-android-lifecycle-extensions:1.0.0-beta09")
 
-  implementation("androidx.lifecycle:lifecycle-common:2.3.0")
+  implementation("androidx.lifecycle:lifecycle-common:2.3.1")
 }
 ```
 
@@ -158,7 +158,9 @@ dependencies {
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-espresso-->
 <!--- INDEX  -->
+
 [IdlingDispatcher]: https://rbusarow.github.io/Dispatch/api/dispatch-android-espresso/dispatch.android.espresso/-idling-dispatcher/index.html
+
 <!--- MODULE dispatch-android-lifecycle-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-viewmodel-->

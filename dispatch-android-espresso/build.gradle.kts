@@ -15,24 +15,25 @@
 
 plugins {
   androidLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
 
-  api(Libs.AndroidX.Test.Espresso.idlingResource)
-  api(Libs.JUnit.jUnit4)
-  api(Libs.Kotlinx.Coroutines.core)
-  api(Libs.Kotlinx.Coroutines.coreJvm)
+  api(libs.androidx.test.espresso.idlingResource)
+  api(libs.junit.junit4)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.coroutines.jvm)
 
-  api(project(":dispatch-core"))
-  implementation(Libs.Kotlinx.Coroutines.android)
+  api(projects.dispatchCore)
 
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.MockK.core)
-  testImplementation(Libs.Robolectric.core)
+  implementation(libs.kotlinx.coroutines.android)
 
-  testImplementation(project(":dispatch-internal-test"))
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.mockk)
+  testImplementation(libs.robolectric)
+
+  testImplementation(projects.dispatchInternalTest)
 }

@@ -15,40 +15,40 @@
 
 plugins {
   androidLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
 
-  api(Libs.AndroidX.Lifecycle.common)
-  api(Libs.Kotlinx.Coroutines.core)
-  api(Libs.Kotlinx.Coroutines.coreJvm)
+  api(libs.androidx.lifecycle.common)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.coroutines.jvm)
 
-  api(project(":dispatch-core"))
+  api(projects.dispatchCore)
 
-  implementation(Libs.AndroidX.Fragment.core)
-  implementation(Libs.AndroidX.Lifecycle.liveData)
-  implementation(Libs.AndroidX.Lifecycle.liveDataKtx)
-  implementation(Libs.AndroidX.Lifecycle.runtime)
-  implementation(Libs.Kotlinx.Coroutines.android)
+  implementation(libs.androidx.fragment.core)
+  implementation(libs.androidx.lifecycle.liveData)
+  implementation(libs.androidx.lifecycle.liveDataKtx)
+  implementation(libs.androidx.lifecycle.runtime)
+  implementation(libs.kotlinx.coroutines.android)
 
-  testImplementation(Libs.AndroidX.Lifecycle.runtime)
-  testImplementation(Libs.AndroidX.Test.Arch.core)
-  testImplementation(Libs.AndroidX.Test.Espresso.core)
-  testImplementation(Libs.AndroidX.Test.runner)
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlinx.Coroutines.test)
-  testImplementation(Libs.RickBusarow.Hermit.coroutines)
-  testImplementation(Libs.RickBusarow.Hermit.junit5)
-  testImplementation(Libs.Robolectric.core)
+  testImplementation(libs.androidx.lifecycle.runtime)
+  testImplementation(libs.androidx.arch.test.core)
+  testImplementation(libs.androidx.test.espresso.core)
+  testImplementation(libs.androidx.test.runner)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlinx.coroutines.test)
+  testImplementation(libs.hermit.coroutines)
+  testImplementation(libs.hermit.jUnit5)
+  testImplementation(libs.robolectric)
 
-  testImplementation(project(":dispatch-internal-test"))
-  testImplementation(project(":dispatch-internal-test-android"))
-  testImplementation(project(":dispatch-test"))
-  testImplementation(project(":dispatch-test-junit4"))
-  testImplementation(project(":dispatch-test-junit5"))
+  testImplementation(projects.dispatchInternalTest)
+  testImplementation(projects.dispatchInternalTestAndroid)
+  testImplementation(projects.dispatchTest)
+  testImplementation(projects.dispatchTestJunit4)
+  testImplementation(projects.dispatchTestJunit5)
 }

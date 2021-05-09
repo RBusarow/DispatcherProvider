@@ -176,15 +176,17 @@ repositories {
 
 dependencies {
 
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-android-viewmodel:1.0.0-beta08")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-android-viewmodel:1.0.0-beta09")
 }
 ```
 
 <!--- MODULE dispatch-core-->
 <!--- INDEX  -->
+
 [DispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-dispatcher-provider/index.html
+
 <!--- MODULE dispatch-test-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-test-junit4-->
@@ -193,7 +195,9 @@ dependencies {
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-espresso-->
 <!--- INDEX  -->
+
 [IdlingDispatcher]: https://rbusarow.github.io/Dispatch/api/dispatch-android-espresso/dispatch.android.espresso/-idling-dispatcher/index.html
+
 <!--- MODULE dispatch-android-lifecycle-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-viewmodel-->

@@ -49,10 +49,6 @@ public final class dispatch/core/DefaultDispatcherProvider {
 	public final fun set (Ldispatch/core/DispatcherProvider;)V
 }
 
-public synthetic class dispatch/core/DefaultDispatcherProviderHolderRefVolatile {
-	public fun <init> (Ljava/lang/Object;)V
-}
-
 public abstract interface class dispatch/core/DispatcherProvider : kotlin/coroutines/CoroutineContext$Element {
 	public static final field Key Ldispatch/core/DispatcherProvider$Key;
 	public abstract fun getDefault ()Lkotlinx/coroutines/CoroutineDispatcher;
@@ -77,7 +73,10 @@ public final class dispatch/core/DispatcherProvider$DefaultImpls {
 }
 
 public final class dispatch/core/DispatcherProvider$Key : kotlin/coroutines/CoroutineContext$Key {
-	public final fun invoke ()Ldispatch/core/DispatcherProvider;
+}
+
+public final class dispatch/core/DispatcherProviderKt {
+	public static final fun DispatcherProvider ()Ldispatch/core/DispatcherProvider;
 }
 
 public final class dispatch/core/FlowKt {

@@ -24,8 +24,10 @@ import hermit.test.junit.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
 import org.junit.jupiter.api.*
+import org.junit.jupiter.api.extension.*
 import java.util.concurrent.*
 
+@ExtendWith(InstantTaskExecutorExtension::class)
 @ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
 internal class AtomicGetOrPutTest : HermitJUnit5() {

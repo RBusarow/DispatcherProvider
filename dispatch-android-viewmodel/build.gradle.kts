@@ -15,29 +15,29 @@
 
 plugins {
   androidLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
-  api(project(":dispatch-core"))
+  api(libs.androidx.lifecycle.viewModel)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.coroutines.jvm)
 
-  api(Libs.AndroidX.Lifecycle.viewModel)
-  api(Libs.Kotlinx.Coroutines.core)
-  api(Libs.Kotlinx.Coroutines.coreJvm)
+  api(projects.dispatchCore)
 
-  implementation(Libs.AndroidX.Lifecycle.viewModelKtx)
-  implementation(Libs.Kotlinx.Coroutines.android)
+  implementation(libs.androidx.lifecycle.viewModelKtx)
+  implementation(libs.kotlinx.coroutines.android)
 
-  testImplementation(Libs.AndroidX.Test.Espresso.core)
-  testImplementation(Libs.AndroidX.Test.runner)
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlinx.Coroutines.test)
+  testImplementation(libs.androidx.test.espresso.core)
+  testImplementation(libs.androidx.test.runner)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlinx.coroutines.test)
 
-  testImplementation(project(":dispatch-core"))
-  testImplementation(project(":dispatch-internal-test"))
-  testImplementation(project(":dispatch-test-junit5"))
+  testImplementation(projects.dispatchCore)
+  testImplementation(projects.dispatchInternalTest)
+  testImplementation(projects.dispatchTestJunit5)
 }

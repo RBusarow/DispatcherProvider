@@ -143,14 +143,18 @@ dependencies {
 <!--- INDEX  -->
 <!--- MODULE dispatch-test-->
 <!--- INDEX  -->
+
 [TestProvidedCoroutineScope]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/-test-provided-coroutine-scope/index.html
 [cleanupTestCoroutines]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/-test-provided-coroutine-scope/index.html#kotlinx.coroutines.test/TestCoroutineScope/cleanupTestCoroutines/#/PointingToDeclaration/
+
 <!--- MODULE dispatch-test-junit4-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-test-junit5-->
 <!--- INDEX  -->
+
 [CoroutineTestExtension]: https://rbusarow.github.io/Dispatch/api/dispatch-test-junit5/dispatch.test/-coroutine-test-extension/index.html
 [CoroutineTest]: https://rbusarow.github.io/Dispatch/api/dispatch-test-junit5/dispatch.test/-coroutine-test/index.html
+
 <!--- MODULE dispatch-android-espresso-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-lifecycle-->

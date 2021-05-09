@@ -17,12 +17,16 @@ package dispatch.internal.test.android
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.channels.*
+import kotlinx.coroutines.flow.*
 
 class FakeLifecycle(lifecycleOwner: FakeLifecycleOwner) : Lifecycle() {
 
   val delegate = LifecycleRegistry(lifecycleOwner)
 
-  val observerEvents = Channel<ObserverEvent>(1200)
+  val observerEvents = MutableSharedFlow<ObserverEvent>(
+    replay = 1,
+    onBufferOverflow = BufferOverflow.DROP_OLDEST
+  )
 
   val observerCount: Int get() = delegate.observerCount
 
@@ -35,12 +39,12 @@ class FakeLifecycle(lifecycleOwner: FakeLifecycleOwner) : Lifecycle() {
 
   override fun addObserver(observer: LifecycleObserver) {
     delegate.addObserver(observer)
-    observerEvents.sendBlocking(ObserverEvent.Add(observer))
+    observerEvents.tryEmit(ObserverEvent.Add(observer))
   }
 
   override fun removeObserver(observer: LifecycleObserver) {
     delegate.removeObserver(observer)
-    observerEvents.sendBlocking(ObserverEvent.Remove(observer))
+    observerEvents.tryEmit(ObserverEvent.Remove(observer))
   }
 
   override fun getCurrentState(): State = delegate.currentState

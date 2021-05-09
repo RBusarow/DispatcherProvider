@@ -22,19 +22,12 @@ public final class dispatch/detekt/DispatchRuleSetProvider : io/gitlab/arturbosc
 }
 
 public final class dispatch/detekt/rules/AndroidXLifecycleScope : io/gitlab/arturbosch/detekt/api/Rule {
-	public static final field Companion Ldispatch/detekt/rules/AndroidXLifecycleScope$Companion;
-	public static final field functionName Ljava/lang/String;
 	public fun <init> ()V
 	public fun <init> (Lio/gitlab/arturbosch/detekt/api/Config;)V
 	public synthetic fun <init> (Lio/gitlab/arturbosch/detekt/api/Config;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun getIssue ()Lio/gitlab/arturbosch/detekt/api/Issue;
 	public fun visitImportDirective (Lorg/jetbrains/kotlin/psi/KtImportDirective;)V
 	public fun visitReferenceExpression (Lorg/jetbrains/kotlin/psi/KtReferenceExpression;)V
-}
-
-public final class dispatch/detekt/rules/AndroidXLifecycleScope$Companion {
-	public final fun getExplicitImportRegex ()Lkotlin/text/Regex;
-	public final fun getStarImportRegex ()Lkotlin/text/Regex;
 }
 
 public final class dispatch/detekt/rules/HardCodedDispatcher : io/gitlab/arturbosch/detekt/api/Rule {

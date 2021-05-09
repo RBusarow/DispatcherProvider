@@ -14,24 +14,29 @@
  */
 
 plugins {
-  id(Plugins.androidApplication)
+  id("com.android.application")
   kotlin("android")
-  id(Plugins.kotlinParcelize)
+  id("kotlin-parcelize")
 }
-
+@Suppress("MagicNumber")
 android {
-  compileSdkVersion(Versions.compileSdk)
+  compileSdkVersion(30)
 
   defaultConfig {
-    minSdkVersion(Versions.minSdk)
-    targetSdkVersion(Versions.targetSdk)
+    minSdkVersion(21)
+    targetSdkVersion(30)
     versionCode = 1
-    versionName = Versions.versionName
+    versionName = "1.0.0-beta09"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
   buildFeatures.viewBinding = true
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+  }
 
   buildTypes {
     getByName("release") {
@@ -43,33 +48,33 @@ android {
 
 dependencies {
 
-  androidTestImplementation(Libs.AndroidX.Test.Espresso.core)
-  androidTestImplementation(Libs.AndroidX.Test.runner)
+  androidTestImplementation(libs.androidx.test.espresso.core)
+  androidTestImplementation(libs.androidx.test.runner)
 
-  androidTestImplementation(project(":dispatch-android-espresso"))
+  androidTestImplementation(projects.dispatchAndroidEspresso)
 
-  implementation(Libs.AndroidX.activity)
-  implementation(Libs.AndroidX.appcompat)
-  implementation(Libs.AndroidX.constraintLayout)
-  implementation(Libs.AndroidX.coreKtx)
-  implementation(Libs.AndroidX.Fragment.ktx)
-  implementation(Libs.AndroidX.Lifecycle.common)
-  implementation(Libs.JakeWharton.timber)
-  implementation(Libs.Kotlinx.Coroutines.android)
-  implementation(Libs.Kotlinx.Coroutines.core)
+  implementation(libs.androidx.activity)
+  implementation(libs.androidx.appcompat)
+  implementation(libs.androidx.constraintLayout)
+  implementation(libs.androidx.coreKtx)
+  implementation(libs.androidx.fragment.ktx)
+  implementation(libs.androidx.lifecycle.common)
+  implementation(libs.timber)
+  implementation(libs.kotlinx.coroutines.android)
+  implementation(libs.kotlinx.coroutines.core)
 
-  implementation(project(":dispatch-android-lifecycle"))
-  implementation(project(":dispatch-android-lifecycle-extensions"))
-  implementation(project(":dispatch-android-viewmodel"))
-  implementation(project(":dispatch-core"))
+  implementation(projects.dispatchAndroidLifecycle)
+  implementation(projects.dispatchAndroidLifecycleExtensions)
+  implementation(projects.dispatchAndroidViewmodel)
+  implementation(projects.dispatchCore)
 
-  testImplementation(Libs.JUnit.jUnit4)
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlinx.Coroutines.test)
+  testImplementation(libs.junit.junit4)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlinx.coroutines.test)
 
-  testImplementation(project(":dispatch-test-junit4"))
-  testImplementation(project(":dispatch-test-junit5"))
+  testImplementation(projects.dispatchTestJunit4)
+  testImplementation(projects.dispatchTestJunit5)
 }

@@ -82,16 +82,15 @@ public interface DispatcherProvider : CoroutineContext.Element {
   /**
    * Unique [Key] definition which allows the `DispatcherProvider` to be stored in the [CoroutineContext].
    */
-  public companion object Key : CoroutineContext.Key<DispatcherProvider> {
-
-    /**
-     * Default implementation of [DispatcherProvider] which simply delegates to the corresponding
-     * properties in the [Dispatchers] singleton.
-     *
-     * This should be suitable for most production code.
-     *
-     * @see DefaultDispatcherProvider
-     */
-    public operator fun invoke(): DispatcherProvider = DefaultDispatcherProvider.get()
-  }
+  public companion object Key : CoroutineContext.Key<DispatcherProvider>
 }
+
+/**
+ * Default implementation of [DispatcherProvider] which simply delegates to the corresponding
+ * properties in the [Dispatchers] singleton.
+ *
+ * This should be suitable for most production code.
+ *
+ * @see DefaultDispatcherProvider
+ */
+public fun DispatcherProvider(): DispatcherProvider = DefaultDispatcherProvider.get()

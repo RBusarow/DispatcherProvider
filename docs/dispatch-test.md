@@ -120,25 +120,29 @@ repositories {
 dependencies {
 
   // core
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
-  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta08")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+  implementation("com.rickbusarow.dispatch:dispatch-core:1.0.0-beta09")
 
-  testImplementation("com.rickbusarow.dispatch:dispatch-test:1.0.0-beta08")
-  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+  testImplementation("com.rickbusarow.dispatch:dispatch-test:1.0.0-beta09")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3")
 }
 ```
 
 <!--- MODULE dispatch-core-->
 <!--- INDEX  -->
+
 [DispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-dispatcher-provider/index.html
 [DefaultDispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-default-dispatcher-provider/index.html
+
 <!--- MODULE dispatch-test-->
 <!--- INDEX  -->
+
 [TestDispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/-test-dispatcher-provider/index.html
 [TestProvidedCoroutineScope]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/-test-provided-coroutine-scope/index.html
 [runBlockingProvided]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/run-blocking-provided.html
 [testProvided]: https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/test-provided.html
+
 <!--- END -->
 
 [CoroutineDispatcher]: https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-dispatcher/index.html

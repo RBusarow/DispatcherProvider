@@ -23,50 +23,29 @@ import org.jetbrains.dokka.gradle.*
 import org.jetbrains.kotlin.gradle.tasks.*
 
 buildscript {
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    maven("https://oss.sonatype.org/content/repositories/snapshots")
-    google()
-    jcenter()
-    gradlePluginPortal()
-    maven("https://dl.bintray.com/kotlin/kotlinx")
-  }
   dependencies {
-
-    classpath(BuildPlugins.androidGradlePlugin)
-    classpath(BuildPlugins.atomicFu)
-    classpath(BuildPlugins.binaryCompatibility)
-    classpath(BuildPlugins.kotlinGradlePlugin)
-    classpath(BuildPlugins.gradleMavenPublish)
-    classpath(BuildPlugins.knit)
+    classpath("com.android.tools.build:gradle:4.2.0")
+    classpath("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.1")
+    classpath("org.jetbrains.kotlinx:binary-compatibility-validator:0.5.0")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0")
+    classpath("com.vanniktech:gradle-maven-publish-plugin:0.15.1")
+    classpath("org.jetbrains.kotlinx:kotlinx-knit:0.2.3")
   }
 }
 
 plugins {
-  id(Plugins.benManes) version Versions.benManes
-  id(Plugins.dependencyAnalysis) version Versions.dependencyAnalysis
-  id(Plugins.gradleDoctor) version Versions.gradleDoctor
-  id(Plugins.detekt) version Libs.Detekt.version
+  id("com.github.ben-manes.versions") version "0.38.0"
+  id("com.autonomousapps.dependency-analysis") version "0.72.0"
+  id("com.osacky.doctor") version "0.7.0"
+  id("io.gitlab.arturbosch.detekt") version "1.16.0"
   kotlin("jvm")
-  id(Plugins.dokka) version Versions.dokka
-  id(Plugins.taskTree) version Versions.taskTree
-  id(Plugins.spotless) version Versions.spotless
+  id("org.jetbrains.dokka") version "1.4.10"
+  id("com.dorongold.task-tree") version "1.5"
+  id("com.diffplug.spotless") version "5.12.4"
   base
-}
-
-allprojects {
-
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    google()
-    jcenter()
-  }
-
-  tasks.withType<Test> {
-    useJUnitPlatform()
-  }
+  // can be removed for Kotlin Gradle Plugin 1.5.10
+  // workaround for https://youtrack.jetbrains.com/issue/KT-46368#focus=Comments-27-4868598.0-0
+  id("dev.zacsweers.kgp-150-leak-patcher") version "1.0.1"
 }
 
 tasks.dokkaHtmlMultiModule.configure {
@@ -185,8 +164,8 @@ detekt {
 
 dependencies {
 
-  detekt(Libs.Detekt.cli)
-  detektPlugins(project(path = ":dispatch-detekt"))
+  detekt(libs.detekt.cli)
+  detektPlugins(projects.dispatchDetekt)
 }
 
 tasks.withType<DetektCreateBaselineTask> {
@@ -211,7 +190,7 @@ tasks.withType<Detekt> {
   this.jvmTarget = "1.8"
 }
 
-apply(plugin = Plugins.binaryCompatilibity)
+apply(plugin = "binary-compatibility-validator")
 
 extensions.configure<ApiValidationExtension> {
 
@@ -232,7 +211,7 @@ extensions.configure<ApiValidationExtension> {
   )
 }
 
-apply(plugin = Plugins.knit)
+apply(plugin = "kotlinx-knit")
 
 extensions.configure<KnitPluginExtension> {
 
@@ -284,11 +263,6 @@ tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
 }
 
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
-  format("javascript") {
-    target("**/docusaurus/**/*.js")
-    targetExclude("**/node_modules/**")
-    prettier()
-  }
   kotlin {
     target("**/src/**/*.kt")
     ktlint("0.40.0")

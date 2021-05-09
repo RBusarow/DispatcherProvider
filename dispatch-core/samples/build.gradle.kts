@@ -23,15 +23,15 @@ sourceSets["test"].java.srcDir("test")
 
 dependencies {
 
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlin.test)
-  testImplementation(Libs.Kotlin.testCommon)
-  testImplementation(Libs.Kotlinx.Coroutines.core)
-  testImplementation(Libs.Kotlinx.Coroutines.test)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlin.test)
+  testImplementation(libs.kotlin.testCommon)
+  testImplementation(libs.kotlinx.coroutines.core)
+  testImplementation(libs.kotlinx.coroutines.test)
 
-  testImplementation(project(":dispatch-core"))
+  testImplementation(projects.dispatchCore)
 
 }

@@ -17,6 +17,7 @@ package dispatch.test
 
 import dispatch.test.CoroutineTestExtension.*
 import dispatch.test.internal.*
+import kotlinx.atomicfu.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.*
 import org.junit.jupiter.api.extension.*
@@ -55,15 +56,33 @@ import kotlin.coroutines.*
 @ExperimentalCoroutinesApi
 @Suppress("newApi") // this arbitrary build target is 21, but JUnit5 requires Java 8
 public class CoroutineTestExtension(
-  private val scopeFactory: ScopeFactory = ScopeFactory()
+  scopeFactory: ScopeFactory = ScopeFactory()
 ) : TypeBasedParameterResolver<TestProvidedCoroutineScope>(),
   BeforeEachCallback,
   AfterEachCallback {
 
-  private val lazyScope = lazy { scopeFactory.create() }
+  private val atomicScopeFactory = atomic(scopeFactory)
+
+  private val resetManager = ResetManager()
+
+  private val lazyScope = resetManager.resets {
+    val newScope = atomicScopeFactory.value.create()
+
+    Dispatchers.setMain(newScope.dispatcherProvider.main)
+
+    newScope
+  }
 
   /**
-   * A single `TestProvidedCoroutineScope` instance which is reset via [cleanUpTestCoroutines][TestCoroutineScope.cleanupTestCoroutines] after each test.
+   * A lazy `TestProvidedCoroutineScope` instance which is reset via [cleanUpTestCoroutines][TestCoroutineScope.cleanupTestCoroutines] after each test.
+   *
+   * ### Before Each:
+   * - If accessed, [Dispatchers.Main] is set to the [TestCoroutineDispatcher] used by the [CoroutineContext].
+   *
+   * ### After Each:
+   * - [cleanUpTestCoroutines][TestCoroutineScope.cleanupTestCoroutines] is called.
+   * - [Dispatchers.Main] is reset via [Dispatchers.resetMain].
+   * - The existing scope instance is destroyed.
    */
   public val scope: TestProvidedCoroutineScope
     get() = lazyScope.value
@@ -78,38 +97,21 @@ public class CoroutineTestExtension(
     extensionContext: ExtensionContext
   ): TestProvidedCoroutineScope {
 
-    val scope = contextScopeMap[extensionContext]
-
-    // if a scope was already created for this context (not sure how), return it
-    if (scope != null) return scope
-
     val annotation = extensionContext.getAnnotationRecursive<CoroutineTest>()
 
     // if the extension is registered via @RegisterExtension,
     // then its factory would be passed at instance creation and is already set
-    val newScope = if (annotation == null) {
-      scopeFactory.create()
-    } else {
+    if (annotation != null) {
       @Suppress("UNCHECKED_CAST")
       val factoryClass = annotation.scopeFactory
 
       val factory = factoryClass.java.getConstructor().newInstance() as? ScopeFactory
         ?: throw resolutionException(factoryClass)
 
-      factory.create()
+      atomicScopeFactory.lazySet(factory)
     }
 
-    contextScopeMap[extensionContext] = newScope
-
-    /*
-    If injecting a function, then the scope isn't created until after beforeEach,
-    so we have to setMain here
-     */
-    extensionContext.testMethod.ifPresent {
-      Dispatchers.setMain(newScope.dispatcherProvider.main)
-    }
-
-    return newScope
+    return scope
   }
 
   /**
@@ -133,10 +135,10 @@ public class CoroutineTestExtension(
 
     if (lazyScope.isInitialized()) {
       scope.cleanupTestCoroutines()
+      Dispatchers.resetMain()
     }
 
-    contextScopeMap[context]?.cleanupTestCoroutines()
-    Dispatchers.resetMain()
+    resetManager.resetAll()
   }
 
   /**

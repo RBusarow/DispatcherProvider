@@ -32,9 +32,9 @@ In root project-level `build.gradle` or `build.gradle.kts`:
 ``` kotlin
 allprojects {
   dependencies {
-    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.14.2")
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.16.0")
     
-    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta08")
+    detektPlugins("com.rickbusarow.dispatch:dispatch-detekt:1.0.0-beta09")
   }
 }
 ```
@@ -77,8 +77,10 @@ There is an [issue](https://github.com/detekt/detekt/issues/2582) with ClassLoad
 <!--- INDEX  -->
 <!--- MODULE dispatch-detekt-->
 <!--- INDEX  -->
+
 [AndroidXLifecycleScope]: https://rbusarow.github.io/Dispatch/api/dispatch-detekt/dispatch.detekt.rules/-android-x-lifecycle-scope/index.html
 [HardCodedDispatcher]: https://rbusarow.github.io/Dispatch/api/dispatch-detekt/dispatch.detekt.rules/-hard-coded-dispatcher/index.html
+
 <!--- MODULE dispatch-android-espresso-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-lifecycle-->

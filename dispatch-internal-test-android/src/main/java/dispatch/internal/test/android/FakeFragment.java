@@ -30,7 +30,7 @@ public class FakeFragment extends Fragment {
     MutableLiveData<LifecycleOwner> fakeViewLifecycleOwnerLiveData = new MutableLiveData<>(null);
     private LifecycleOwner fakeViewLifecycleOwner = null;
 
-    public FakeFragment(LifecycleOwner fragmentLifecycleOwner) {
+    public FakeFragment(@Nullable LifecycleOwner fragmentLifecycleOwner) {
         this.fragmentLifecycleOwner = fragmentLifecycleOwner;
     }
 

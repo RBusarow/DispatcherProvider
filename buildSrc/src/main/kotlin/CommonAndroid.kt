@@ -13,23 +13,22 @@
  * limitations under the License.
  */
 
-@file:Suppress("LongMethod")
-
 import com.android.build.gradle.*
 import org.gradle.api.*
 import org.gradle.api.JavaVersion.*
 import org.gradle.kotlin.dsl.*
 import java.io.*
 
+@Suppress("MagicNumber", "LongMethod")
 fun Project.commonAndroid() {
 
   configure<TestedExtension> {
-    compileSdkVersion(Versions.compileSdk)
+    compileSdkVersion(30)
 
     defaultConfig {
-      minSdkVersion(Versions.minSdk)
-      targetSdkVersion(Versions.targetSdk)
-      versionName = Versions.versionName
+      minSdkVersion(21)
+      targetSdkVersion(30)
+      versionName = "1.0.0-beta09"
 
       testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

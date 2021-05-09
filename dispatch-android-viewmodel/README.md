@@ -184,7 +184,9 @@ dependencies {
 
 <!--- MODULE dispatch-core-->
 <!--- INDEX  -->
+
 [DispatcherProvider]: https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/-dispatcher-provider/index.html
+
 <!--- MODULE dispatch-test-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-test-junit4-->
@@ -193,7 +195,9 @@ dependencies {
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-espresso-->
 <!--- INDEX  -->
+
 [IdlingDispatcher]: https://rbusarow.github.io/Dispatch/api/dispatch-android-espresso/dispatch.android.espresso/-idling-dispatcher/index.html
+
 <!--- MODULE dispatch-android-lifecycle-->
 <!--- INDEX  -->
 <!--- MODULE dispatch-android-viewmodel-->

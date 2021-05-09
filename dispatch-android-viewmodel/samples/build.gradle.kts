@@ -18,19 +18,19 @@ plugins {
 }
 
 dependencies {
-  implementation(Libs.Kotlinx.Coroutines.core)
-  implementation(Libs.Kotlinx.Coroutines.test)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(libs.kotlinx.coroutines.test)
 
-  implementation(project(":dispatch-android-espresso"))
-  implementation(project(":dispatch-android-viewmodel"))
-  implementation(project(":dispatch-core"))
-  implementation(project(":dispatch-test"))
+  implementation(projects.dispatchAndroidEspresso)
+  implementation(projects.dispatchAndroidViewmodel)
+  implementation(projects.dispatchCore)
+  implementation(projects.dispatchTest)
 
-  testImplementation(Libs.JUnit.jUnit5)
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlin.test)
-  testImplementation(Libs.Kotlin.testCommon)
+  testImplementation(libs.junit.jupiter)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlin.test)
+  testImplementation(libs.kotlin.testCommon)
 
 }

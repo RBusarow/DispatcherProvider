@@ -14,32 +14,33 @@
  */
 
 plugins {
-  id(Plugins.atomicFu)
+  id("kotlinx-atomicfu")
   javaLibrary
-  id(Plugins.mavenPublish)
-  id(Plugins.dokka)
+  id("com.vanniktech.maven.publish")
+  id("org.jetbrains.dokka")
 }
 
 dependencies {
 
-  api(Libs.JUnit.jUnit5Api)
+  api(libs.junit.api)
+  api(libs.junit.api)
 
-  api(project(":dispatch-test"))
+  api(projects.dispatchTest)
 
-  implementation(Libs.JUnit.jUnit5)
-  implementation(Libs.Kotlin.reflect)
-  implementation(Libs.Kotlinx.Coroutines.core)
-  implementation(Libs.Kotlinx.Coroutines.coreJvm)
-  implementation(Libs.Kotlinx.Coroutines.test)
+  implementation(libs.junit.jupiter)
+  implementation(libs.kotlin.reflect)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(libs.kotlinx.coroutines.jvm)
+  implementation(libs.kotlinx.coroutines.test)
 
-  implementation(project(":dispatch-core"))
+  implementation(projects.dispatchCore)
 
-  testImplementation(Libs.Kotest.assertions)
-  testImplementation(Libs.Kotest.properties)
-  testImplementation(Libs.Kotest.runner)
-  testImplementation(Libs.Kotlin.test)
-  testImplementation(Libs.Kotlin.testCommon)
-  testImplementation(Libs.MockK.core)
+  testImplementation(libs.kotest.assertions)
+  testImplementation(libs.kotest.properties)
+  testImplementation(libs.kotest.runner)
+  testImplementation(libs.kotlin.test)
+  testImplementation(libs.kotlin.testCommon)
+  testImplementation(libs.mockk)
 
-  testImplementation(project(":dispatch-internal-test"))
+  testImplementation(projects.dispatchInternalTest)
 }

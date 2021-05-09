@@ -100,27 +100,45 @@ internal fun DispatchLifecycleScope.launchEvery(
 @Suppress("EXPERIMENTAL_API_USAGE")
 internal fun Lifecycle.eventFlow(
   minimumState: Lifecycle.State
-): Flow<Boolean> = callbackFlow<Boolean> {
+): Flow<Boolean> {
+
+  val flow = MutableSharedFlow<Lifecycle.State>(
+    // replay of 1 emits the current value to new collectors
+    replay = 1
+  )
+
+  // immediately send the current state.  Otherwise there's no events until the lifecycle changes.
+  flow.tryEmit(currentState)
 
   val observer = LifecycleEventObserver { _, _ ->
 
     // send true if the state is high enough, false if not
-    sendBlockingOrNull(currentState.isAtLeast(minimumState))
-
-    // if lifecycle is destroyed, send the last value to cancel the last block and then close the channel
-    if (currentState == Lifecycle.State.DESTROYED) {
-      channel.close()
-    }
+    flow.tryEmit(currentState)
   }
 
   addObserver(observer)
 
-  // When the channel is closed, remove the observer.
-  awaitClose { removeObserver(observer) }
+  return flow
+    .takeWhile {
+      // stop collecting when the lifecycle is destroyed.  This triggers `onCompletion` below
+      it != Lifecycle.State.DESTROYED
+    }
+    .mapLatest { it.isAtLeast(minimumState) }
+    .onCompletion {
+      // remove the LifecycleEventObserver from the Lifecycle receiver when the flow collection ends
+      removeObserver(observer)
+      if (minimumState == Lifecycle.State.CREATED) {
+        // If minimumState is CREATED, then we're listening for the DESTROYED state to send false.
+        // But DESTROYED is filtered out above and cancels the Flow, so `false` is never sent.
+        // If we reach this point with a CREATED minimumState, then the lifecycle is DESTROYED,
+        // so we send a final `false` so that the downstream collectors know they can stop.
+        emit(false)
+      }
+    }
+    .flowOnMainImmediate()
+    // Don't send [true, true] since the second true would cancel the already-active block.
+    .distinctUntilChanged()
 }
-  .flowOnMainImmediate()
-  // Don't send [true, true] since the second true would cancel the already-active block.
-  .distinctUntilChanged()
 
 /**
  * Terminal operator which collects the given [Flow] until the [predicate] returns true.
@@ -140,21 +158,4 @@ private suspend fun <T> Flow<T>.collectUntil(
 internal fun <T> Flow<T>.onEachLatest(action: suspend (T) -> Unit) = transformLatest { value ->
   action(value)
   return@transformLatest emit(value)
-}
-
-/**
- * Attempts to add [element] into this channel via [sendBlocking] inside a try/catch for a [ClosedSendChannelException].
- *
- * ### Note
- *
- * Attempting to send to a cancelled Channel throws a [CancellationException].
- * This is a more generic Exception which would be unsafe to catch in this manner.
- *
- * @return null if this channel is closed for send.
- * @see sendBlocking
- */
-private fun <E> SendChannel<E>.sendBlockingOrNull(element: E) = try {
-  sendBlocking(element)
-} catch (e: ClosedSendChannelException) {
-  null
 }

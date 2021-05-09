@@ -18,15 +18,15 @@ plugins {
 }
 dependencies {
 
-  api(Libs.AndroidX.Fragment.core)
-  api(Libs.AndroidX.Lifecycle.common)
-  api(Libs.AndroidX.Lifecycle.liveData)
-  api(Libs.AndroidX.Lifecycle.runtime)
-  api(Libs.Kotlinx.Coroutines.core)
-  api(Libs.Kotlinx.Coroutines.coreJvm)
-  api(Libs.JUnit.jUnit5Api)
+  api(libs.androidx.fragment.core)
+  api(libs.androidx.lifecycle.common)
+  api(libs.androidx.lifecycle.liveData)
+  api(libs.androidx.lifecycle.runtime)
+  api(libs.junit.api)
+  api(libs.kotlinx.coroutines.core)
+  api(libs.kotlinx.coroutines.jvm)
 
-  implementation(Libs.AndroidX.Lifecycle.runtimeKtx)
-  implementation(Libs.Kotlin.reflect)
-  implementation(Libs.Kotlinx.Coroutines.android)
+  implementation(libs.androidx.lifecycle.runtimeKtx)
+  implementation(libs.kotlin.reflect)
+  implementation(libs.kotlinx.coroutines.android)
 }

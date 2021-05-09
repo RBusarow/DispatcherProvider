@@ -13,13 +13,19 @@
  * limitations under the License.
  */
 
-@file:Suppress("LongMethod", "TopLevelPropertyNaming")
-
 import org.gradle.api.*
+import org.gradle.api.tasks.testing.*
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.*
 
 fun Project.common() {
+
+  tasks.withType<Test> {
+
+    useJUnitPlatform {
+      includeEngines("junit-vintage", "junit-jupiter")
+    }
+  }
 
   tasks.withType<KotlinCompile>()
     .configureEach {
@@ -32,15 +38,19 @@ fun Project.common() {
       }
     }
 
-// force update all transitive dependencies (prevents some library leaking an old version)
+  // force update all transitive dependencies (prevents some library leaking an old version)
   configurations.all {
     resolutionStrategy {
       force(
-        Libs.Kotlin.reflect,
-        Libs.Kotlinx.Coroutines.core,
-        Libs.Kotlinx.Coroutines.test,
-        Libs.Kotlinx.Coroutines.android
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
       )
+      eachDependency {
+        when {
+          requested.group == "org.jetbrains.kotlin" -> useVersion("1.5.0")
+        }
+      }
     }
   }
 }
