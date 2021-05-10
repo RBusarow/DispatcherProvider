@@ -43,27 +43,27 @@ module.exports = {
       //      },
       items: [
         {
+          label: "Basics",
           type: "doc",
           docId: "quickstart",
-          label: "Basics",
           position: "left",
         },
         {
+          label: "Modules",
           type: "doc",
           docId: "modules/dispatch-core",
-          label: "Modules",
           position: "left",
         },
         {
           type: "docsVersionDropdown",
           position: "right",
           dropdownActiveClassDisabled: true,
-          dropdownItemsAfter: [
-            {
-//               to: "/versions",
-//               label: "All versions",
-            },
-          ],
+          // dropdownItemsAfter: [
+          //   {
+          //     to: "/versions",
+          //     label: "All versions",
+          //   },
+          // ],
         },
         {
           label: "Twitter",
