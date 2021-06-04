@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://rbusarow.github.io/Dispatch/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-core/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-detekt/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-test/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-test-junit4/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-test-junit5/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-android-espresso/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-android-lifecycle/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-android-lifecycle-extensions/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/dispatch-android-viewmodel/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/CHANGELOG/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-core/dispatch.core/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-detekt/dispatch.detekt/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-test/dispatch.test/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-test-junit4/dispatch.test/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-test-junit5/dispatch.test/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-android-espresso/dispatch.android.espresso/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-android-lifecycle/dispatch.android.lifecycle/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-android-lifecycle-extensions/dispatch.android.lifecycle/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://rbusarow.github.io/Dispatch/api/dispatch-android-viewmodel/dispatch.android.viewmodel/</loc>
-     <lastmod>2020-12-14</lastmod>
+     <lastmod>2021-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

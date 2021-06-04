@@ -32,6 +32,7 @@
 <div class="divergent-group" data-filterable-current=":dispatch-android-lifecycle:dokkaHtml/release" data-filterable-set=":dispatch-android-lifecycle:dokkaHtml/release"><div class="brief-with-platform-tags"><div class="inner-brief-with-platform-tags"><p class="paragraph"><p class="paragraph">Lifecycle-aware function for launching a coroutine any time the <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html">Lifecycle.State</a> is at least <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.STARTED.html">Lifecycle.State.STARTED</a>.</p><p class="paragraph"><code>block</code> is executed using the receiver <span data-unresolved-link="kotlinx.coroutines//CoroutineScope/#kotlin.coroutines.CoroutineContext/PointingToDeclaration/">CoroutineScope</span>'s <span data-unresolved-link="kotlinx.coroutines//Job/#kotlinx.coroutines.Job?/PointingToDeclaration/">Job</span> as a parent, but always executes using <span data-unresolved-link="kotlinx.coroutines/Dispatchers/Main/#/PointingToDeclaration/">Dispatchers.Main</span> as its <span data-unresolved-link="kotlinx.coroutines/CoroutineDispatcher///PointingToDeclaration/">CoroutineDispatcher</span>.</p><p class="paragraph">Execution of <code>block</code> is cancelled when the receiver <span data-unresolved-link="kotlinx.coroutines//CoroutineScope/#kotlin.coroutines.CoroutineContext/PointingToDeclaration/">CoroutineScope</span> is cancelled, or when <a href="index.html#dispatch.android.lifecycle/DispatchLifecycleScope/lifecycle/#/PointingToDeclaration/">lifecycle</a>'s <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.html">Lifecycle.State</a> drops below <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle.State.STARTED.html">Lifecycle.State.STARTED</a>.</p></p><h2 class=""><a data-name="samples"></a>Samples</h2><div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Samples"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dispatch-android-lifecycle:dokkaHtml/release"><div class="sample-container"><code class="runnablesample monospace" theme="idea"><pre>import dispatch.android.lifecycle.*
 import dispatch.android.lifecycle.DispatchLifecycleScope.MinimumStatePolicy.*
 import dispatch.core.*
+import dispatch.internal.test.android.*
 import dispatch.test.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
@@ -92,6 +93,7 @@ fun main() {
 }</pre></code></div><div class="sample-container"><code class="runnablesample monospace" theme="idea"><pre>import dispatch.android.lifecycle.*
 import dispatch.android.lifecycle.DispatchLifecycleScope.MinimumStatePolicy.*
 import dispatch.core.*
+import dispatch.internal.test.android.*
 import dispatch.test.*
 import io.kotest.matchers.*
 import kotlinx.coroutines.*
