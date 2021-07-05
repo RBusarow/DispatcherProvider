@@ -310,7 +310,7 @@ rickbusarow-hermit-jUnit4 = { module = "com.rickbusarow.hermit:hermit-junit4", v
 rickbusarow-hermit-jUnit5 = { module = "com.rickbusarow.hermit:hermit-junit5", version.ref = "rickbusarow-hermit" }
 rickbusarow-hermit-mockk = { module = "com.rickbusarow.hermit:hermit-mockk", version.ref = "rickbusarow-hermit" }
 
-robolectric = "org.robolectric:robolectric:4.5.1"
+robolectric = "org.robolectric:robolectric:4.6.1"
 
 sephiroth-bottom-navigation = "it.sephiroth.android.library.bottomnavigation:bottom-navigation:3.0.0"
 
