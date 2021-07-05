@@ -253,7 +253,7 @@ dependencies {
   dependencySync("org.junit.jupiter:junit-jupiter-params:5.7.2")
   dependencySync("org.junit.jupiter:junit-jupiter:5.7.2")
   dependencySync("org.junit.vintage:junit-vintage-engine:5.7.2")
-  dependencySync("org.objenesis:objenesis:3.1")
+  dependencySync("org.objenesis:objenesis:3.2")
   dependencySync("org.robolectric:robolectric:4.5.1")
 
 }
