@@ -205,7 +205,7 @@ dependencies {
   dependencySync("io.kotest:kotest-common-jvm:4.6.0")
   dependencySync("io.kotest:kotest-property-jvm:4.6.0")
   dependencySync("io.kotest:kotest-runner-junit5-jvm:4.6.0")
-  dependencySync("io.mockk:mockk:1.11.0")
+  dependencySync("io.mockk:mockk:1.12.0")
   dependencySync("io.noties.markwon:core:4.6.2")
   dependencySync("io.noties.markwon:ext-tables:4.6.2")
   dependencySync("io.noties.markwon:syntax-highlight:4.6.2")
