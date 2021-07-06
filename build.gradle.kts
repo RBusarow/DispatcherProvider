@@ -25,7 +25,7 @@ import org.jetbrains.kotlin.gradle.tasks.*
 buildscript {
   dependencies {
     classpath("com.android.tools.build:gradle:4.2.1")
-    classpath("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.1")
+    classpath("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.2")
     classpath("org.jetbrains.kotlinx:binary-compatibility-validator:0.6.0")
     classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
     classpath("com.vanniktech:gradle-maven-publish-plugin:0.16.0")
