@@ -235,7 +235,7 @@ dependencies {
   dependencySync("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.20")
   dependencySync("org.jetbrains.kotlin:kotlin-test-common:1.5.20")
   dependencySync("org.jetbrains.kotlin:kotlin-test:1.5.20")
-  dependencySync("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.1")
+  dependencySync("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.16.2")
   dependencySync("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
   dependencySync("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.5.0")
   dependencySync("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0")
