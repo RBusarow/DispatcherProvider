@@ -227,7 +227,7 @@ dependencies {
   dependencySync("org.bouncycastle:bcprov-jdk15to18:1.69")
   dependencySync("org.codehaus.groovy:groovy-xml:3.0.8")
   dependencySync("org.codehaus.groovy:groovy:3.0.8")
-  dependencySync("org.jetbrains.dokka:dokka-gradle-plugin:1.4.32")
+  dependencySync("org.jetbrains.dokka:dokka-gradle-plugin:1.5.0")
   dependencySync("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.20")
   dependencySync("org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.5.20")
   dependencySync("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
