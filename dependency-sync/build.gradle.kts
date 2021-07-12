@@ -138,7 +138,7 @@ dependencies {
   dependencySync("com.google.firebase:firebase-messaging-ktx:22.0.0")
   dependencySync("com.google.firebase:firebase-perf-ktx:20.0.1")
   dependencySync("com.google.gms:google-services:4.3.8")
-  dependencySync("com.google.maps.android:android-maps-utils:2.2.4")
+  dependencySync("com.google.maps.android:android-maps-utils:2.2.5")
   dependencySync("com.google.mlkit:barcode-scanning:16.2.0")
   dependencySync("com.google.truth:truth:1.1.3")
   dependencySync("com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT")
